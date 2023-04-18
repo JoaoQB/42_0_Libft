@@ -6,7 +6,7 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 12:37:41 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/04/18 11:39:00 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/04/18 12:56:20 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-size_t	ft_strlen(char *str);
+size_t	ft_strlen(const char *str);
 int	ft_atoi(const char *nptr);
 int	ft_isalpha(int c);
 int	ft_isdigit(int c);

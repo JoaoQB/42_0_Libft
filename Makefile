@@ -6,7 +6,7 @@
 #    By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/18 09:36:54 by jqueijo-          #+#    #+#              #
-#    Updated: 2023/04/18 12:32:31 by jqueijo-         ###   ########.fr        #
+#    Updated: 2023/04/18 12:52:01 by jqueijo-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,9 +27,9 @@ B_SRC = \
 CC = cc
 CFLAGS = -Wall -Werror -Wextra
 
-OBJ = $(SRC: .c=.o)
+OBJ = $(SRC:.c=.o)
 
-B_OBJ = $(B_SRC: .c=.o)
+B_OBJ = $(B_SRC:.c=.o)
 
 $(NAME): $(OBJ)
 		ar -rcs $@ $(OBJ)
