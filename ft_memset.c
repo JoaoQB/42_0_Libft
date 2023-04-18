@@ -6,7 +6,7 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 15:32:17 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/04/13 16:26:59 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/04/18 09:53:59 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,13 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
+	size_t	i;
 
+	i = 0;
+	while (i < n)
+	{
+		*((char *)s + i) = c;
+		i++;
+	}
+	return (s);
 }
