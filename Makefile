@@ -6,7 +6,7 @@
 #    By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/18 09:36:54 by jqueijo-          #+#    #+#              #
-#    Updated: 2023/04/18 12:52:01 by jqueijo-         ###   ########.fr        #
+#    Updated: 2023/04/18 13:21:39 by jqueijo-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ SRC = ft_strlen.c \
 		ft_memset.c \
 		ft_bzero.c \
 		ft_strlcat.c \
+		ft_strlcpy.c \
 
 B_SRC = \
 
