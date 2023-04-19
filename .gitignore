@@ -2,3 +2,5 @@
 *.out
 libft.a
 *.swp
+.vscode/
+*.*#
