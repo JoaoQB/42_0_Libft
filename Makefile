@@ -6,7 +6,7 @@
 #    By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/18 09:36:54 by jqueijo-          #+#    #+#              #
-#    Updated: 2023/04/19 16:27:25 by jqueijo-         ###   ########.fr        #
+#    Updated: 2023/04/21 18:20:14 by jqueijo-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ SRC = ft_strlen.c \
 		ft_atoi.c \
 		ft_isalpha.c \
 		ft_isdigit.c \
+		ft_isalnum.c \
 		ft_isascii.c \
 		ft_isprint.c \
 		ft_memset.c \
@@ -27,8 +28,15 @@ SRC = ft_strlen.c \
 		ft_memcpy.c \
 		ft_memmove.c \
 		ft_strchr.c \
+		ft_strrchr.c \
 		ft_strncmp.c \
 		ft_strnstr.c \
+		ft_tolower.c \
+		ft_toupper.c \
+		ft_calloc.c \
+		ft_strdup.c \
+		ft_itoa.c \
+		ft_putchar_fd.c \
 
 B_SRC = \
 

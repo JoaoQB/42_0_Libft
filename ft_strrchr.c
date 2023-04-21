@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/19 14:55:33 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/04/21 16:31:21 by jqueijo-         ###   ########.fr       */
+/*   Created: 2023/04/19 16:45:32 by jqueijo-          #+#    #+#             */
+/*   Updated: 2023/04/19 17:19:32 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+char	*ft_strrchr(const char *s, int c)
 {
-	if (n == 0)
-		return (0);
-	while ((*s1 || *s2) && n-- > 1 && *s1 == *s2)
+	int	i;
+
+	i = ft_strlen(s);
+	if (!c)
+		return ((char *)s + i);
+	while (--i >= 0)
 	{
-		s1++;
-		s2++;
+		if (*(s + i) == (char)c)
+			return ((char *)s + i);
 	}
-	return ((*(unsigned char *)s1 - *(unsigned char *)s2));
+	return (NULL);
 }
