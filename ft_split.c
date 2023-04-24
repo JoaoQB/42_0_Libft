@@ -6,13 +6,16 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 10:01:50 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/04/24 11:19:10 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/04/24 11:25:42 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int	substr_count();
+static	int	substr_count(char const *s)
+{
+}
+
 static	ft_free();
 static	*fill_word();
 
