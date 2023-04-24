@@ -6,7 +6,7 @@
 #    By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/18 09:36:54 by jqueijo-          #+#    #+#              #
-#    Updated: 2023/04/23 17:38:32 by jqueijo-         ###   ########.fr        #
+#    Updated: 2023/04/24 10:48:13 by jqueijo-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,10 @@ SRC = ft_strlen.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c \
 		ft_substr.c \
+		ft_strjoin.c \
+		ft_strtrim.c \
+		ft_strmapi.c \
+		ft_striteri.c \
 
 B_SRC = \
 
