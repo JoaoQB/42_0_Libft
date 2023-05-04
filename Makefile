@@ -6,7 +6,7 @@
 #    By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/18 09:36:54 by jqueijo-          #+#    #+#              #
-#    Updated: 2023/05/04 13:37:21 by jqueijo-         ###   ########.fr        #
+#    Updated: 2023/05/04 16:06:59 by jqueijo-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,6 +48,8 @@ SRC = ft_strlen.c \
 
 B_SRC = ft_lstnew.c \
 		ft_lstadd_front.c \
+		ft_lstlast.c \
+		ft_lstsize.c \
 
 CC = cc
 CFLAGS = -Wall -Werror -Wextra

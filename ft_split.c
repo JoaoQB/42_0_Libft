@@ -6,7 +6,7 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 10:01:50 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/04/26 19:06:35 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/05/04 16:07:21 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,16 @@ char	**ft_split(char const *s, char c)
 	while (i <= ft_strlen(s))
 	{
 		if (s[i] != c && i_word < 0)
+			i_word = i;
+		else if ((s[i] == c || i == ft_strlen(s)) && i_word >= 0)
+		{
+			split_strs[j] = fill_substr(s, (i - i_word) + 1);
+			if (!(split_strs[j]))
+				return (ft_free(split_strs, j));
+			i_word = -1;
+			j++;
+		}
+		i++;
 	}
+	return (split_strs);
 }
