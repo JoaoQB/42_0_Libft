@@ -6,7 +6,7 @@
 #    By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/18 09:36:54 by jqueijo-          #+#    #+#              #
-#    Updated: 2023/05/05 16:23:43 by jqueijo-         ###   ########.fr        #
+#    Updated: 2023/05/05 16:54:26 by jqueijo-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,14 +48,14 @@ SRC = ft_strlen.c \
 		ft_split.c
 
 B_SRC = ft_lstnew.c \
-		ft_lstadd_front.c \
-		ft_lstsize.c \
-		ft_lstlast.c \
-		ft_lstadd_back.c \
-		ft_lstdelone.c \
-		ft_lstclear.c \
-		ft_lstiter.c \
-		ft_lstmap.c
+	ft_lstadd_front.c \
+	ft_lstsize.c \
+	ft_lstlast.c \
+	ft_lstadd_back.c \
+	ft_lstdelone.c \
+	ft_lstclear.c \
+	ft_lstiter.c \
+	ft_lstmap.c
 
 CC = cc
 CFLAGS = -Wall -Werror -Wextra
@@ -65,18 +65,18 @@ OBJ = $(SRC:.c=.o)
 B_OBJ = $(B_SRC:.c=.o)
 
 $(NAME): $(OBJ)
-		ar -rcs $@ $(OBJ)
+	ar -rcs $@ $(OBJ)
 
 all: $(NAME)
 
 bonus: $(B_OBJ)
-	ar -rcs $(NAME) $(OBJ)
+	ar -rcs $(NAME) $(B_OBJ)
 
 clean:
-		rm -f $(OBJ) $(B_OBJ)
+	rm -f $(OBJ) $(B_OBJ)
 
 fclean: clean
-		rm -f $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
 
