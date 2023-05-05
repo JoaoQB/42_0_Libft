@@ -6,7 +6,7 @@
 #    By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/18 09:36:54 by jqueijo-          #+#    #+#              #
-#    Updated: 2023/05/05 15:31:17 by jqueijo-         ###   ########.fr        #
+#    Updated: 2023/05/05 16:23:43 by jqueijo-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,11 +45,12 @@ SRC = ft_strlen.c \
 		ft_strtrim.c \
 		ft_strmapi.c \
 		ft_striteri.c \
+		ft_split.c
 
 B_SRC = ft_lstnew.c \
 		ft_lstadd_front.c \
-		ft_lstlast.c \
 		ft_lstsize.c \
+		ft_lstlast.c \
 		ft_lstadd_back.c \
 		ft_lstdelone.c \
 		ft_lstclear.c \
