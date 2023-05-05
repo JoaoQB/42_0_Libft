@@ -6,7 +6,7 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 16:01:12 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/05/04 16:07:16 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/05/05 15:01:38 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,7 @@ t_list	*ft_lstlast(t_list *lst)
 {
 	if (lst == NULL)
 		return (NULL);
-	while (lst != NULL)
-	{
-		if (lst->next == NULL)
-			return (lst);
+	while (lst->next != NULL)
 		lst = lst->next;
-	}
+	return (lst);
 }
