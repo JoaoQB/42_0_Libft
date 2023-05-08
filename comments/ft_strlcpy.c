@@ -6,11 +6,11 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 13:16:09 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/05/08 14:03:48 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/05/08 15:50:54 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {

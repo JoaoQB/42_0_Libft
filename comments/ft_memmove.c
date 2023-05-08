@@ -6,11 +6,11 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 12:39:50 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/05/08 13:13:21 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/05/08 15:50:41 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 /*works like memcpy but in a nondestructive manner. So if the memory overlaps
 it won't overwrite the original src like with memcpy. Because we can't use

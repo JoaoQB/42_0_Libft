@@ -6,11 +6,11 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 14:05:03 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/05/08 14:08:13 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/05/08 15:50:49 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 size_t	strlcat(char *dst, const char *src, size_t size)
 {

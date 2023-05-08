@@ -6,11 +6,11 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 12:18:59 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/05/08 12:22:37 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/05/08 15:50:32 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
