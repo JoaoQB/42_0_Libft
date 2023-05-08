@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/18 13:02:46 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/05/08 14:03:52 by jqueijo-         ###   ########.fr       */
+/*   Created: 2023/05/08 11:34:56 by jqueijo-          #+#    #+#             */
+/*   Updated: 2023/05/08 12:06:56 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+int	ft_isalpha(int c)
 {
-	size_t	i;
-
-	i = 0;
-	while (src[i] && size && i < size - 1)
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	if (size - i != 0)
-		dst[i] = '\0';
-	return (ft_strlen(src));
+	if ((c >= 65 && c <= 90) || (c >= 97 && c >= 122)) //checks if c is lower or upper case char.
+		return (1);
+	else
+		return (0);
 }

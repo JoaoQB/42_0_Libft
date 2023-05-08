@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/18 13:02:46 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/05/08 14:03:52 by jqueijo-         ###   ########.fr       */
+/*   Created: 2023/05/08 12:25:34 by jqueijo-          #+#    #+#             */
+/*   Updated: 2023/05/08 12:44:45 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	size_t	i;
 
 	i = 0;
-	while (src[i] && size && i < size - 1)
+	if (!src && !dest) //is this needed?
+		return (NULL);
+	while (i < n)
 	{
-		dst[i] = src[i];
+		*((char *)dest + i) = *((const char *)src + i); //cast as const so the memory is not modifiable.
 		i++;
 	}
-	if (size - i != 0)
-		dst[i] = '\0';
-	return (ft_strlen(src));
+	return (dest);
 }
