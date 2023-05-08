@@ -6,7 +6,7 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 12:58:08 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/05/08 15:53:42 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/05/08 23:28:14 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,6 @@ void	*ft_memset(void *s, int c, size_t n);
 size_t	strlcat(char *dst, const char *src, size_t size);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlen(const char *s);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 #endif //Marks the end of the conditional block started by #ifndef directive.

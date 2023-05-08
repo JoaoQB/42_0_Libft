@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   teste.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/23 17:08:34 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/05/08 22:08:46 by jqueijo-         ###   ########.fr       */
+/*   Created: 2023/05/08 21:28:13 by jqueijo-          #+#    #+#             */
+/*   Updated: 2023/05/08 22:07:33 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,17 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (!s)
 		return (NULL);
-	if (start > ft_strlen(s))
+	if (ft_strlen(s) <= start)
 		return (ft_strdup(""));
-	if (len > ft_strlen(s + start))
-		len = ft_strlen(s + start);
-	substr = (char *)malloc(sizeof(char) * (len + 1));
+	if (len > (ft_strlen(s) + 1) - start)
+	{
+		len = ft_strlen(s) - start;
+		substr = (char *)malloc(sizeof(char) * (len + 1));
+		if (!substr)
+			return (NULL);
+	}
+	else
+		substr = (char *)malloc(sizeof(char) * (len + 1));
 	if (!substr)
 		return (NULL);
 	i = -1;

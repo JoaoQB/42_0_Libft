@@ -6,7 +6,7 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 10:13:31 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/05/08 14:08:11 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/05/08 18:22:58 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		dst[i + j] = src[j];
 		j++;
 	}
-	if (i != size)
+	if (i + j != size)
 		dst[i + j] = '\0';
 	return (i + ft_strlen(src));
 }

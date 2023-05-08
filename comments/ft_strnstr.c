@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/08 14:05:03 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/05/08 18:14:22 by jqueijo-         ###   ########.fr       */
+/*   Created: 2023/05/08 18:50:46 by jqueijo-          #+#    #+#             */
+/*   Updated: 2023/05/08 21:44:18 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
 	size_t	j;
 
-	if (!dst && !size)
-		return (0);
 	i = 0;
-	while (*(dst + i) && i < size)
-		i++;
-	j = 0;
-	while (*(src + j) && (i + j + 1) < size)
+	if (!*little)//checks if the first char of little is '\0'.
+		return ((char *)big);
+	if (len == 0 && !big)//checks if big exists.
+		return (NULL);
+	while (big[i] && i < len)
 	{
-		*(dst + i + j) = *(src + j);
-		j++;
+		j = 0;
+		while ((big[i + j] == little[j]) && little[j] && i + j < len)
+			j++;
+		if (!little[j])
+			return ((char *)big + i);
+		i++;
 	}
-	if (i + j != size)//works with i and i + j?
-		*(dst + i + j) = '\0';
-	return (i + ft_strlen(src));
+	return (NULL);
 }

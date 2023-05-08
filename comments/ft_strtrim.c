@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/08 14:05:03 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/05/08 18:14:22 by jqueijo-         ###   ########.fr       */
+/*   Created: 2023/05/08 22:31:01 by jqueijo-          #+#    #+#             */
+/*   Updated: 2023/05/08 23:39:43 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	i;
-	size_t	j;
+	size_t	start;
+	size_t	end;
 
-	if (!dst && !size)
-		return (0);
-	i = 0;
-	while (*(dst + i) && i < size)
-		i++;
-	j = 0;
-	while (*(src + j) && (i + j + 1) < size)
-	{
-		*(dst + i + j) = *(src + j);
-		j++;
-	}
-	if (i + j != size)//works with i and i + j?
-		*(dst + i + j) = '\0';
-	return (i + ft_strlen(src));
+	end = ft_strlen(s1);
+	start = 0;
+	if (!s1)
+		return (NULL);
+	/*checks for set char in beg and end. gets an index for new substr.*/
+	while (s1[start] && ft_strchr(set, *(s1 + start)))
+		start++;
+	while (end > start && ft_strchr(set, *(s1 + end)))
+		end--;
+	return (ft_substr(s1, start, (end - start) + 1));
 }

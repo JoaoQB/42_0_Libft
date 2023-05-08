@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/08 14:05:03 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/05/08 18:14:22 by jqueijo-         ###   ########.fr       */
+/*   Created: 2023/05/08 18:38:25 by jqueijo-          #+#    #+#             */
+/*   Updated: 2023/05/08 18:49:10 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	i;
-	size_t	j;
-
-	if (!dst && !size)
+	if (n == 0)
 		return (0);
-	i = 0;
-	while (*(dst + i) && i < size)
-		i++;
-	j = 0;
-	while (*(src + j) && (i + j + 1) < size)
+	while (n-- > 0) //no if s because it needs to crash in some tests.
 	{
-		*(dst + i + j) = *(src + j);
-		j++;
+		if (*(unsigned char *)s1 != *(unsigned char *)s2)
+			return ((int)(*(unsigned char *)s1 - *(unsigned char *)s2));
+		s1++;
+		s2++;
 	}
-	if (i + j != size)//works with i and i + j?
-		*(dst + i + j) = '\0';
-	return (i + ft_strlen(src));
+	return (0);
 }

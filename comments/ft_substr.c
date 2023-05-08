@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/23 17:08:34 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/05/08 22:08:46 by jqueijo-         ###   ########.fr       */
+/*   Created: 2023/05/08 21:48:57 by jqueijo-          #+#    #+#             */
+/*   Updated: 2023/05/08 22:25:55 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	if (start > ft_strlen(s))
 		return (ft_strdup(""));
+	/*checks if len is bigger than available string to copy from position start*/
 	if (len > ft_strlen(s + start))
-		len = ft_strlen(s + start);
+		len = ft_strlen(s + start);//if so sets len to its value.
 	substr = (char *)malloc(sizeof(char) * (len + 1));
 	if (!substr)
 		return (NULL);
