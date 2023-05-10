@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/04 12:17:13 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/05/10 16:19:55 by jqueijo-         ###   ########.fr       */
+/*   Created: 2023/05/04 16:08:01 by jqueijo-          #+#    #+#             */
+/*   Updated: 2023/05/10 16:28:05 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list	*new_node;
+	t_list	*last;
 
-	new_node = (t_list *)malloc(sizeof(t_list));
-	if (!new_node)
-		return (NULL);
-	new_node->content = content;
-	new_node->next = NULL;
-	return (new_node);
+	if (*lst == NULL)//if lst is empty, new will be already at the back.
+		*lst = new;
+	else
+	{
+		last = ft_lstlast(*lst);//uses ft_lstlast to check the pointer for last.
+		last->next = new;
+	}
 }

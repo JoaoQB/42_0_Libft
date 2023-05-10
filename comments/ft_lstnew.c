@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/04 12:17:13 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/05/10 16:19:55 by jqueijo-         ###   ########.fr       */
+/*   Created: 2023/05/10 16:10:06 by jqueijo-          #+#    #+#             */
+/*   Updated: 2023/05/10 16:16:26 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ t_list	*ft_lstnew(void *content)
 	t_list	*new_node;
 
 	new_node = (t_list *)malloc(sizeof(t_list));
-	if (!new_node)
+	if (!new_node)//failproof
 		return (NULL);
 	new_node->content = content;
 	new_node->next = NULL;
-	return (new_node);
+	return (new_node);//don't forget the return!
 }
