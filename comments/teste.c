@@ -6,35 +6,76 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 21:28:13 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/05/08 22:07:33 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/05/09 18:14:59 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+static int	substr_count(char const *s, int c)
 {
-	char	*substr;
-	size_t	i;
+	size_t	count;
+	size_t	in_word;
 
-	if (!s)
-		return (NULL);
-	if (ft_strlen(s) <= start)
-		return (ft_strdup(""));
-	if (len > (ft_strlen(s) + 1) - start)
+	count = 0;
+	in_word = 0;
+	while (*s)
 	{
-		len = ft_strlen(s) - start;
-		substr = (char *)malloc(sizeof(char) * (len + 1));
-		if (!substr)
-			return (NULL);
+		if (*s != c && in_word == 0)
+		{
+			in_word = 1;
+			count++;
+		}
+		else if (*s == c)
+			in_word = 0;
+		s++;
 	}
-	else
-		substr = (char *)malloc(sizeof(char) * (len + 1));
-	if (!substr)
+	return (count);
+}
+
+static char	*fill_substr(const char *src, size_t len)
+{
+	char	*dest;
+
+	if (!src)
 		return (NULL);
-	i = -1;
-	while (++i < len)
-		*(substr + i) = *(s + start + i);
-	*(substr + i) = '\0';
-	return (substr);
+	dest = (char *)malloc(sizeof(char) * len);
+	if (!dest)
+		return (NULL);
+	ft_strlcpy(dest, src, len);
+	return (dest);
+}
+/*
+static char	ft_free(char **strs, int count)
+{
+	while (--count >= 0)
+		free(*(strs + count));
+	free(strs);
+	return (NULL);
+}*/
+
+char	**ft_split(char const *s, char c)
+{
+	char	**split_strs;
+	int		i;
+	int		j;
+	int		i_word;
+
+	split_strs = (char **)malloc((substr_count(s, c) + 1) * sizeof(char *));
+	if (!split_strs || !s)
+		return (NULL);
+	j = 0;
+	i = 0;
+	while (*(s + i))
+	{
+		if (*(s + i) == c)
+			i++;
+		i_word = i;
+		while (*(s + i) && *(s + i) != c)
+			i++;
+		if (i_word < i)
+			*(split_strs + j++) = fill_substr(&s[i_word], (i - i_word) + 1);
+	}
+	*(split_strs + j) = NULL;
+	return (split_strs);
 }

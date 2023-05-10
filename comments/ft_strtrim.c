@@ -6,7 +6,7 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 22:31:01 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/05/08 23:39:43 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/05/09 14:50:54 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,4 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (end > start && ft_strchr(set, *(s1 + end)))
 		end--;
 	return (ft_substr(s1, start, (end - start) + 1));
-}
+}//if end 10 and start 5, you want to copy 5chars. (10 - 5) + 1 for NULL.
