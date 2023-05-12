@@ -6,7 +6,7 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 15:57:01 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/05/12 14:29:26 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/05/12 15:28:17 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,14 +45,21 @@ static char	*fill_substr(const char *src, size_t len)
 	ft_strlcpy(dest, src, len);
 	return (dest);
 }
-/*
-static char	ft_free(char **strs, int count)
+
+static char	**ft_free(char **strs, int count)
 {
 	while (--count >= 0)
 		free(*(strs + count));
 	free(strs);
 	return (NULL);
-}*/
+}
+
+static int	iterate_i(const char *s, int i, char c)
+{
+	while (*(s + i) && *(s + i) != c)
+		i++;
+	return (i);
+}
 
 char	**ft_split(char const *s, char c)
 {
@@ -71,10 +78,13 @@ char	**ft_split(char const *s, char c)
 		if (*(s + i) == c)
 			i++;
 		i_word = i;
-		while (*(s + i) && *(s + i) != c)
-			i++;
+		i = iterate_i(s, i, c);
 		if (i_word < i)
+		{
 			*(split_strs + j++) = fill_substr(&s[i_word], (i - i_word) + 1);
+			if (!(*(split_strs + j - 1)))
+				return (ft_free(split_strs, j));
+		}
 	}
 	*(split_strs + j) = NULL;
 	return (split_strs);
