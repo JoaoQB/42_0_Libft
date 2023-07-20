@@ -6,7 +6,7 @@
 #    By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/18 09:36:54 by jqueijo-          #+#    #+#              #
-#    Updated: 2023/05/12 14:24:36 by jqueijo-         ###   ########.fr        #
+#    Updated: 2023/07/20 15:27:08 by jqueijo-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ PUT = put/
 STR = str/
 TO = to/
 PF = pf/
-
+GNL = gnl/
 
 SRC = $(TO)ft_atoi.c \
 	$(IS)ft_isalnum.c \
@@ -67,6 +67,12 @@ B_SRC = $(LST)ft_lstnew.c \
 	$(LST)ft_lstclear.c \
 	$(LST)ft_lstiter.c \
 	$(LST)ft_lstmap.c \
+	$(PF)ft_check_args.c \
+	$(PF)ft_printf_aux.c \
+	$(PF)ft_printptr.c \
+	$(PF)ft_printf.c \
+	$(GNL)get_next_line_utils_bonus.c \
+	$(GNL)get_next_line_bonus.c \
 
 CC = cc
 CFLAGS = -Wall -Werror -Wextra

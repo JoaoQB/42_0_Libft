@@ -6,7 +6,7 @@
 /*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 12:37:41 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/05/10 16:28:17 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2023/07/20 15:36:54 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,18 @@
 
 # define LIBFT_H
 
-# include <string.h>
-# include <unistd.h>
-# include <stdlib.h>
-# include <stddef.h>
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10
+# endif
+
+# include <stdlib.h>// Memory allocation
+# include <stdarg.h>// va_lists
+# include <string.h>// String manipulation
+# include <stddef.h>// Types and macros like NULL and size_t
+# include <stdio.h>// Printf
+# include <unistd.h>// System calls, write
+# include <limits.h>// Limits, for testing
+# include <fcntl.h>// Open function
 
 typedef struct s_list
 {
@@ -68,5 +76,19 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+int		ft_check_args(char c, va_list l);
+int		ft_printchar(char c);
+int		ft_printstr(char *str);
+int		ft_printnbr(int nbr);
+int		ft_printnbr_base(unsigned int nbr, char *base);
+static int	ft_putptr(unsigned long long i);
+int		ft_printptr(unsigned long long i);
+int		ft_printf(const char *format, ...);
+char	*ft_join_and_free(char *s1, char *s2);
+char	*read_line(int fd, char *buffer);
+char	*read_line_loop(int fd, char *buffer, char *temp, int rchars);
+char	*create_line(char *temp);
+void	manage_buffer(char *buffer);
+char	*get_next_line(int fd);
 
 #endif
