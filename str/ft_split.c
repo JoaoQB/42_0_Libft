@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jqueijo- <jqueijo-@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: jqueijo- <jqueijo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 15:57:01 by jqueijo-          #+#    #+#             */
-/*   Updated: 2023/05/12 15:28:17 by jqueijo-         ###   ########.fr       */
+/*   Updated: 2024/11/11 15:15:18 by jqueijo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ static int	substr_count(char const *s, int c)
 
 	count = 0;
 	in_word = 0;
+	if (!s)
+		return (0);
 	while (*s)
 	{
 		if (*s != c && in_word == 0)
@@ -69,7 +71,7 @@ char	**ft_split(char const *s, char c)
 	int		i_word;
 
 	split_strs = (char **)malloc((substr_count(s, c) + 1) * sizeof(char *));
-	if (!split_strs || !s)
+	if (!split_strs)
 		return (NULL);
 	j = 0;
 	i = 0;
